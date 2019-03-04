@@ -10,12 +10,13 @@ define('IMG_DIR', 'img/');
 
 
 define('DB_HOST', 'localhost');
-define('DB_USER', 'geek_brains');
-define('DB_PASS', '123123');
+define('DB_USER', 'valentina');
+define('DB_PASS', '123');
 define('DB_NAME', 'geek_brains_shop');
 
 
 require_once ENGINE_DIR . 'functions.php';
 require_once ENGINE_DIR . 'db.php';
 require_once ENGINE_DIR . 'news.php';
+require_once ENGINE_DIR . 'gallery.php';
 

@@ -13,23 +13,20 @@ function render($file, $variables = [])
 		exit();
 	}
 
-
-	$templateContent = file_get_contents($file);
+    $templateContent = file_get_contents($file);
 
 	if (empty($variables)) {
 		return $templateContent;
 	}
 
-	foreach ($variables as $key => $value) {
-		if (empty($value) || !is_string($value)) {
-			continue;
-		}
+    foreach ($variables as $key => $value) {
+        if (!isset($value) || $value == false || ! is_string($value)) {
 
-		$key = '{{' . strtoupper($key) . '}}';
-
+            continue;
+        }
+		$key = '{{' . mb_strtoupper($key) . '}}';
 		$templateContent = str_replace($key, $value, $templateContent);
 	}
-
 	return $templateContent;
 }
 
@@ -41,7 +38,7 @@ function createGallery()
 
 	foreach ($images as $image) {
 		if(is_file(WWW_DIR . IMG_DIR . $image)) {
-			$result .= render(TEMPLATES_DIR . 'galleryItem.tpl', [
+			$result .= render(TEMPLATES_DIR . 'gallery.tpl', [
 				'src' => IMG_DIR . $image
 			]);
 		}

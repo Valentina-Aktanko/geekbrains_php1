@@ -1,1 +1,13 @@
-<a href="{{SRC}}" target="_blank"><img src="{{SRC}}" alt="image" style="max-width: 300px; max-height: 300px"/></a>
+<!doctype>
+<html>
+<head>
+    <title>{{TITLE}}</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <a href="/gallery.php">Назад</a>
+</header>
+<div>{{CONTENT}}</div>
+</body>
+</html>
