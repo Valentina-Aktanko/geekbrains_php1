@@ -29,5 +29,11 @@ function getImgItem($id)
 
 function renderGalleryItem($img)
 {
-   return render(TEMPLATES_DIR . 'galleryItem.tpl', $img);
+//    var_dump($img);
+//    die;
+    $galleryItemContent ='';
+    foreach ($img as $item) {
+        $galleryItemContent .= render(TEMPLATES_DIR . 'galleryItem.tpl', $item);
+    }
+    return $galleryItemContent;
 }
